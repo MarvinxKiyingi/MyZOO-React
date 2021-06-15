@@ -25,6 +25,7 @@ export function Animals() {
       <div key={animal.id} className='animalContent'>
         <h4>{animal.name}</h4>
         <img src={animal.imageUrl} alt={animal.id.toString()} />
+        <p>{animal.shortDescription}</p>
       </div>
     );
   });
