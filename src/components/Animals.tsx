@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { Animal } from '../models/Animal';
 
 // this another way of writing functionalcomponents.
@@ -26,6 +27,9 @@ export function Animals() {
         <h4>{animal.name}</h4>
         <img src={animal.imageUrl} alt={animal.id.toString()} />
         <p>{animal.shortDescription}</p>
+        <div>
+          <Link to={'/animal/' + animal.id}>Visa mer</Link>
+        </div>
       </div>
     );
   });

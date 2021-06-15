@@ -1,3 +1,3 @@
 export function AnimalDetails() {
-  return <div>Animal details work</div>;
+  return <div> Animal component works</div>;
 }
