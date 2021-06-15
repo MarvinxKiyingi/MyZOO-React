@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import './App.css';
+import { Animals } from './components/Animals';
 import { PageNotfound } from './components/PageNotFound';
 
 function App() {
@@ -8,7 +9,7 @@ function App() {
     <Router>
       <Switch>
         <Route exact path='/'>
-          <div className='App'> Hello MyZOO</div>
+          <Animals></Animals>
         </Route>
         <Route path='*'>
           <PageNotfound></PageNotfound>
