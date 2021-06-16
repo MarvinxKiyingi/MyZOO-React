@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { Animal } from '../models/Animal';
 
 // this another way of writing functionalcomponents.
-export function Animals() {
+export function StartPage() {
   let stateDefaultValue: Animal[] = [];
   const [animals, setAnimals] = useState(stateDefaultValue);
 

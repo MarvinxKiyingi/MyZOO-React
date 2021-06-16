@@ -1,3 +1,4 @@
+import axios from 'axios';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router';
 import { AnimalSpecifics } from '../models/AnimalSpecifics';
@@ -33,7 +34,10 @@ export function AnimalDetails() {
     if (animalObj) {
       setAnimal(animalObj);
     } else {
-      console.log('localStorage is empty');
+      axios.get<AnimalSpecifics[]>('https://animals.azurewebsites.net/api/animals').then((Response) => {
+        setAnimals(Response.data);
+        localStorage.setItem('Animals', JSON.stringify(Response.data));
+      });
     }
   }, [id, parsedParamsID, animals]);
 
@@ -44,9 +48,9 @@ export function AnimalDetails() {
         updatedAnimal[i].isFed = true;
         updatedAnimal[i].lastFed = new Date();
 
-        localStorage.setItem('Animals', JSON.stringify(updatedAnimal));
         setAnimal(updatedAnimal[i]);
         setAnimals(updatedAnimal);
+        localStorage.setItem('Animals', JSON.stringify(updatedAnimal));
       }
     }
   }
