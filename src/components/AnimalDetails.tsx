@@ -60,7 +60,9 @@ export function AnimalDetails() {
       <div></div>
       <h4>{animal.latinName}</h4>
       <img src={animal.imageUrl} alt={animal.name} />
-      <button onClick={feedAnimal}>Mata mig!</button>
+      <button onClick={feedAnimal} disabled={animal.isFed}>
+        {animal.isFed ? 'Jag är belåten' : 'Mata mig!'}
+      </button>
       <p>Djur är mattat: {animal.isFed ? 'Ja' : 'Nej'}</p>
       <p>{animal.isFed.toString()}</p>
     </div>
