@@ -2,6 +2,7 @@ import axios from 'axios';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router';
 import { AnimalSpecifics } from '../models/AnimalSpecifics';
+import { Link } from 'react-router-dom';
 
 interface IAnimalParams {
   id: string;
@@ -57,7 +58,9 @@ export function AnimalDetails() {
 
   return (
     <div>
-      <div></div>
+      <div>
+        <Link to={'/'}>Back Home</Link>
+      </div>
       <h4>{animal.latinName}</h4>
       <img src={animal.imageUrl} alt={animal.name} />
       <button onClick={feedAnimal} disabled={animal.isFed}>
