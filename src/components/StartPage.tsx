@@ -10,13 +10,13 @@ export function StartPage() {
 
   useEffect(() => {
     //Motsvarande NgOnInit i Angular, med syfte att köras på en gång när vår component körsa
-    if (!localStorage.getItem('Animals')) {
+    if (!sessionStorage.getItem('Animals')) {
       axios.get<Animal[]>('https://animals.azurewebsites.net/api/animals').then((Response) => {
         setAnimals(Response.data);
-        localStorage.setItem('Animals', JSON.stringify(Response.data));
+        sessionStorage.setItem('Animals', JSON.stringify(Response.data));
       });
     } else {
-      let getDataFromLS: Animal[] = JSON.parse(localStorage.getItem('Animals') || '[]');
+      let getDataFromLS: Animal[] = JSON.parse(sessionStorage.getItem('Animals') || '[]');
       setAnimals(getDataFromLS);
     }
   }, []);

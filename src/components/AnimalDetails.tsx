@@ -22,22 +22,22 @@ export function AnimalDetails() {
   };
   const [animal, setAnimal] = useState(animalStateDefaultValue);
 
-  // hämtar listan från localStorage
-  let animalsStateDefaultValue: AnimalSpecifics[] = JSON.parse(localStorage.getItem('Animals') || '[]');
+  // hämtar listan från sessionStorage
+  let animalsStateDefaultValue: AnimalSpecifics[] = JSON.parse(sessionStorage.getItem('Animals') || '[]');
   const [animals, setAnimals] = useState(animalsStateDefaultValue);
 
   //Ändrar id värde från string till number
   const parsedParamsID: number = parseInt(id);
 
   useEffect(() => {
-    // Går igenom min lista från localStorage för att hitta ett object med samma id som finns i min URL för just det djuret
+    // Går igenom min lista från sessionStorage för att hitta ett object med samma id som finns i min URL för just det djuret
     let animalObj = animals.find((animalObject) => animalObject.id === parsedParamsID);
     if (animalObj) {
       setAnimal(animalObj);
     } else {
       axios.get<AnimalSpecifics[]>('https://animals.azurewebsites.net/api/animals').then((Response) => {
         setAnimals(Response.data);
-        localStorage.setItem('Animals', JSON.stringify(Response.data));
+        sessionStorage.setItem('Animals', JSON.stringify(Response.data));
       });
     }
   }, [id, parsedParamsID, animals]);
@@ -51,7 +51,7 @@ export function AnimalDetails() {
 
         setAnimal(updatedAnimal[i]);
         setAnimals(updatedAnimal);
-        localStorage.setItem('Animals', JSON.stringify(updatedAnimal));
+        sessionStorage.setItem('Animals', JSON.stringify(updatedAnimal));
       }
     }
   }
