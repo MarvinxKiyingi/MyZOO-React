@@ -1,3 +1,6 @@
+@import './../scss/_mixins/MediaQuery';
+@import './../scss/_mixins/Typography';
+
 .logo-Container {
   display: flex;
   justify-content: center;
@@ -6,5 +9,8 @@
     color: black;
     font-size: 3rem;
     font-weight: 700;
+    @include desktop {
+      font-size: 5rem;
+    }
   }
 }

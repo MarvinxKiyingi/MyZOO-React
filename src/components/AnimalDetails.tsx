@@ -67,7 +67,7 @@ export function AnimalDetails() {
         <h4>
           {animal.latinName} ( {animal.latinName} )
         </h4>
-        <h5>Födelse år: {animal.yearOfBirth}</h5>
+        <h5>Födelseår: {animal.yearOfBirth}</h5>
         <p>{animal.longDescription}</p>
         <div className='feedMeBtn-container'>
           <button onClick={feedAnimal} disabled={animal.isFed}>

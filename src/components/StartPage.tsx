@@ -30,9 +30,11 @@ export function StartPage() {
         </div>
         <div className='text-Container'>
           <h4>{animal.name}</h4>
-          <Link to={'/animal/' + animal.id} className='showMore-Btn'>
-            Visa mer
-          </Link>
+          <div className='showMoreBtn-Container'>
+            <Link to={'/animal/' + animal.id} className='showMore-Btn'>
+              Visa mer
+            </Link>
+          </div>
         </div>
       </div>
     );
