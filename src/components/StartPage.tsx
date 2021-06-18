@@ -25,10 +25,14 @@ export function StartPage() {
   let animalContent = animals.map((animal) => {
     return (
       <div key={animal.id} className='animal-content'>
-        <h4>{animal.name}</h4>
-        <img src={animal.imageUrl} alt={animal.id.toString()} className='poster' />
-        <div>
-          <Link to={'/animal/' + animal.id}>Visa mer</Link>
+        <div className='poster-container'>
+          <img src={animal.imageUrl} alt={animal.id.toString()} className='poster' />
+        </div>
+        <div className='text-Container'>
+          <h4>{animal.name}</h4>
+          <Link to={'/animal/' + animal.id} className='showMore-Btn'>
+            Visa mer
+          </Link>
         </div>
       </div>
     );

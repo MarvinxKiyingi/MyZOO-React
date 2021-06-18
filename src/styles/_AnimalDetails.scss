@@ -1,2 +1,54 @@
 @import './../scss/_mixins/MediaQuery';
 @import './../scss/_mixins/Typography';
+
+.animalDetails-Container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .poster-Container {
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .poster {
+      max-width: 100%;
+    }
+  }
+  .text-Container {
+    h4,
+    h5 {
+      text-align: center;
+    }
+    p {
+      padding: 1.5rem;
+    }
+    .feedMeBtn-container {
+      display: flex;
+      justify-content: center;
+      button {
+        padding: 0.5rem 1rem;
+        font-size: 1rem;
+        background-color: #4d724d;
+        color: white;
+        font-weight: 500;
+        border: none;
+      }
+
+      button[disabled] {
+        background-color: #8db48e;
+        color: white;
+      }
+    }
+    .backHomeBtn-Container {
+      display: flex;
+      justify-content: flex-end;
+      padding: 1.5rem;
+      .backHome-Btn {
+        text-decoration: none;
+        color: black;
+        padding: 0.2rem 0.5rem;
+        background-color: rgb(203, 203, 203);
+      }
+    }
+  }
+}

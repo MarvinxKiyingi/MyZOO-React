@@ -2,9 +2,33 @@
 @import './../scss/_mixins/Typography';
 
 .animal-container {
+  display: flex;
+  flex-direction: column;
   .animal-content {
-    .poster {
-      max-width: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0.5rem;
+    .poster-container {
+      width: 80%;
+      display: flex;
+      justify-content: center;
+      .poster {
+        max-width: 100%;
+      }
+    }
+    .text-Container {
+      h4 {
+        text-align: center;
+        font-size: 1.3rem;
+      }
+      .showMore-Btn {
+        text-decoration: none;
+        padding: 0rem 2rem;
+        background-color: #8db48e;
+        color: white;
+        font-weight: 500;
+      }
     }
   }
 }

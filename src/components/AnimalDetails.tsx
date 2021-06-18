@@ -58,17 +58,28 @@ export function AnimalDetails() {
   }
 
   return (
-    <div>
-      <div>
-        <Link to={'/'}>Back Home</Link>
+    <div className='animalDetails-Container'>
+      <div className='poster-Container'>
+        <img src={animal.imageUrl} alt={animal.name} className='poster' />
       </div>
-      <h4>{animal.latinName}</h4>
-      <img src={animal.imageUrl} alt={animal.name} />
-      <button onClick={feedAnimal} disabled={animal.isFed}>
-        {animal.isFed ? 'Jag är belåten' : 'Mata mig!'}
-      </button>
-      <p>Djur är mattat: {animal.isFed ? 'Ja' : 'Nej'}</p>
-      <p>{animal.isFed.toString()}</p>
+
+      <div className='text-Container'>
+        <h4>
+          {animal.latinName} ( {animal.latinName} )
+        </h4>
+        <h5>Födelse år: {animal.yearOfBirth}</h5>
+        <p>{animal.longDescription}</p>
+        <div className='feedMeBtn-container'>
+          <button onClick={feedAnimal} disabled={animal.isFed}>
+            {animal.isFed ? 'Jag är belåten' : 'Mata mig!'}
+          </button>
+        </div>
+        <div className='backHomeBtn-Container'>
+          <Link to={'/'} className='backHome-Btn'>
+            Back Home
+          </Link>
+        </div>
+      </div>
     </div>
   );
 }
