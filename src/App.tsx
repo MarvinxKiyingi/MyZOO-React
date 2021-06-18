@@ -1,15 +1,18 @@
-import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import './App.css';
-import { Animals } from './components/Animals';
+import { AnimalDetails } from './components/AnimalDetails';
 import { PageNotfound } from './components/PageNotFound';
+import { StartPage } from './components/StartPage';
 
 function App() {
   return (
     <Router>
       <Switch>
         <Route exact path='/'>
-          <Animals></Animals>
+          <StartPage></StartPage>
+        </Route>
+        <Route path='/animal/:id'>
+          <AnimalDetails></AnimalDetails>
         </Route>
         <Route path='*'>
           <PageNotfound></PageNotfound>
