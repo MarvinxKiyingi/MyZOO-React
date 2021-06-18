@@ -1,0 +1,9 @@
+.logo-Container {
+  display: flex;
+  justify-content: center;
+  .logo {
+    text-decoration: none;
+    color: black;
+    font-weight: 700;
+  }
+}

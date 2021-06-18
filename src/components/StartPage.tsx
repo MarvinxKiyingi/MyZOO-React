@@ -17,22 +17,21 @@ export function StartPage() {
         sessionStorage.setItem('Animals', JSON.stringify(Response.data));
       });
     } else {
-      let getDataFromLS: Animal[] = JSON.parse(sessionStorage.getItem('Animals') || '[]');
-      setAnimals(getDataFromLS);
+      let getDataFromSs: Animal[] = JSON.parse(sessionStorage.getItem('Animals') || '[]');
+      setAnimals(getDataFromSs);
     }
   }, []);
 
   let animalContent = animals.map((animal) => {
     return (
-      <div key={animal.id} className='animalContent'>
+      <div key={animal.id} className='animal-content'>
         <h4>{animal.name}</h4>
-        <img src={animal.imageUrl} alt={animal.id.toString()} />
-        <p>{animal.shortDescription}</p>
+        <img src={animal.imageUrl} alt={animal.id.toString()} className='poster' />
         <div>
           <Link to={'/animal/' + animal.id}>Visa mer</Link>
         </div>
       </div>
     );
   });
-  return <div className='animalWrapper'>{animalContent}</div>;
+  return <div className='animal-container'>{animalContent}</div>;
 }
