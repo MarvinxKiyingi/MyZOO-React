@@ -1,5 +1,5 @@
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import './App.css';
+import './App.scss';
 import { AnimalDetails } from './components/AnimalDetails';
 import { PageNotfound } from './components/PageNotFound';
 import { StartPage } from './components/StartPage';

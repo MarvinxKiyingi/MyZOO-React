@@ -2,6 +2,7 @@ import axios from 'axios';
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Animal } from '../models/Animal';
+import './../styles/_StartPage.scss';
 
 // this another way of writing functionalcomponents.
 export function StartPage() {

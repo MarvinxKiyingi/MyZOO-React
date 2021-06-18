@@ -1,0 +1,13 @@
+//Mixins
+@import './scss/_mixins/MediaQuery';
+@import './scss/_mixins/Typography';
+
+*,
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: $mainFont;
+}

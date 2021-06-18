@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import { useParams } from 'react-router';
 import { AnimalSpecifics } from '../models/AnimalSpecifics';
 import { Link } from 'react-router-dom';
+import './../styles/_AnimalDetails.scss';
 
 interface IAnimalParams {
   id: string;
